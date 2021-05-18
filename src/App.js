@@ -1,10 +1,11 @@
 import Home from "./Components/Home/Home";
 import {Link ,Switch, Route} from 'react-router-dom'
 import Feed from "./Components/Feed/Feed";
+import GlobalState from "./Context/GlobalState";
 
 function App() {
   return (
-    <div>
+    <GlobalState>
       <h1>Hello</h1>
       {/* <Counter/> */}
       <Link to="/home">Home</Link><br/>
@@ -13,7 +14,7 @@ function App() {
         <Route path="/feed" exact component={Feed}/>
         <Route path="/home" exact component={Home}/>
       </Switch>
-    </div>
+    </GlobalState>
   );
 }
 
